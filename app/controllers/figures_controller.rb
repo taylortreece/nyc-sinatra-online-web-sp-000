@@ -18,11 +18,11 @@ class FiguresController < ApplicationController
     @figure.landmark_ids = params[:figure][:landmark_ids]
 
       if !params[:title][:name].empty?
-        @figure.title_ids << Title.find_or_create_by(name: params[:title][:name]).save.id
+        @figure.title_ids << Title.find_or_create_by(name: params[:title][:name]).id
       end
 
       if !params[:landmark][:name].empty?
-        @figure.landmark_ids << Landmark.find_or_create_by(name: params[:landmark][:name]).save.id
+        @figure.landmark_ids << Landmark.find_or_create_by(name: params[:landmark][:name]).id
       end
 
     @figure.save
